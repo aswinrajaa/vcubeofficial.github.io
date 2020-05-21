@@ -1,0 +1,671 @@
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Book Antiqua", Palatino, "Palatino Linotype";
+    font-size: 25px;
+    font-style: normal;
+    --Text-color: #154360;
+    color: var(--Text-color);
+    --bg-color: #fff;
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+    --Whatsapp-text-color: #fff;
+    --Whatsapp-bg-color: #1ebea5;
+    --highlight-color: rgba(174, 214, 241,0.3);
+    --highlight-color-trans: rgba(174, 214, 241,0.7);
+    --highlight-color-notrans: rgba(174, 214, 241,0.9);
+}
+
+/*Custom Scroll Bar*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--Text-color); 
+    border-radius: 10px;
+    border: 1px solid var(--Text-color);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    
+    background: var(--highlight-color); 
+  }
+
+/*Loading Animation*/
+
+.LoadingAnimation{
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: var(--bg-color);
+}
+
+.centerPlacement{
+    width: 121px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.loader {    
+    z-index: 1000;
+    border: 16px solid var(--Text-color);
+    border-radius: 50%;
+    border-top: 16px solid var(--highlight-color);
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+/*Header*/
+
+.blankSpace{
+    height: 0px;
+    display: none;
+}
+    /*Mobile*/
+#Mobile_Vcube{
+    display: none;
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+}
+
+#mobile_TopLayout{
+    height: 40px;
+    width: 100%;
+}
+
+.background{
+    background-color: var(--highlight-color-trans);
+}
+
+.button{
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    float: right;
+}
+
+.button:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+#overlayMobile{
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.MobileOverlay > ul{
+    padding: 0px;
+}
+
+.MobileOverlay > ul > li{
+    display: flex;
+}
+
+.MobileOverlay > ul > li > a{
+    text-decoration: none;
+    margin: auto;
+    padding: 25px 0px 25px 0px;
+    cursor: pointer;
+    color: var(--bg-color);
+}
+
+
+.line{
+    border-top: 2px solid var(--Text-color);
+    margin: 4px;
+}
+
+
+    /*Computer*/
+.TopLayout{
+    margin-top: 5px;
+    position: fixed;    
+    left: 0;
+    right: 0;
+    z-index:3;
+    transition-duration: 1s;
+    height: 57px;
+    text-shadow: -3px 0 6px #fff, 0 3px 6px #fff, 3px 0 6px #fff, 0 -3px 6px #fff;
+}
+
+.not_transparant{
+    z-index: 5;
+    margin-top: -4px;
+    background-color: var(--highlight-color-trans);
+    text-shadow: none;
+    transition-duration: 1s;
+}
+
+.TopLayout > ul > li{
+    list-style-type: none;
+    float: right;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.TopLayout > ul > li:hover{
+    background-color: var(--Text-color);
+    transition-duration: 0.5s;
+}
+
+
+/*Vcube Logo*/
+
+.Vcube_logo{
+    margin: -14px 0px 0px 0px;
+    padding: 0px 10px 10px 4px;
+    transition-duration: 1s;
+    width: 280px;
+    transition: width 2s, height 2s;
+    border: none;
+    z-index: 10;
+    -webkit-filter: drop-shadow(0px 0px 10px #fff);
+    filter: drop-shadow(0px 0px 10px #fff);
+}
+
+.not_transparant_Logo{
+    z-index: 6;
+    width: 100px;
+    border: none;
+    animation: alternate;
+    transition-duration: 1s;
+    transition: width 2s, height 2s;
+}
+
+.TopLayout > ul > li > a{
+    text-decoration: none;
+    display: inline-block;
+    color: var(--Text-color);
+    font-weight: bold;
+    text-shadow: -3px 0 6px #fff, 0 3px 6px #fff, 3px 0 6px #fff, 0 -3px 6px #fff;
+}
+.TopLayout > ul > li > a:hover{
+    text-decoration: none;
+    color: #fff;
+    text-shadow: none;
+    /*text-shadow: -3px 0 6px #fff, 0 3px 6px #fff, 3px 0 6px #fff, 0 -3px 6px #fff;*/
+}
+
+#Body_Vcube{
+    z-index: 1;
+}
+
+/*Mobile Logo*/
+#Mobile_Logo{
+    
+}
+
+.logo_Width{
+    width: 180px;
+    margin: -7px 0px 0 4px;
+    padding: 0 0 0 0;
+}
+
+.small_Logo{
+    width: 64px;
+    border: none;
+    transition-duration: 1s;
+    transition: width 2s, height 2s;
+}
+
+/*Carousal*/
+
+.carousel{
+    width: 100vw;
+}
+
+.carousel-caption{
+    font-family: "Book Antiqua", Palatino, "Palatino Linotype";
+    font-weight: bold;
+    font-size: 40px;
+    color: var(--Text-color);
+    padding-bottom: 280px;
+    text-shadow: -3px 0 6px #fff, 0 3px 6px #fff, 3px 0 6px #fff, 0 -3px 6px #fff;
+    z-index: 1;
+}
+
+.caption_Img{
+    width: 40px;
+    display: inline;
+}
+
+.carousel-indicators{
+    z-index: 1;
+}
+
+/*Body*/
+.Body > div{
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+}
+
+/*About Us*/
+#Aboutus_Vcube{
+    margin: auto;
+    color: var(--Text-color);
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    width: 97%;
+}
+
+#Aboutus_Vcube > div > h2{
+    text-align: center;
+    text-decoration: underline;
+}
+
+#Aboutus_Vcube > div > p{
+    text-align: center;
+}
+
+/*Services*/
+
+#Services_Vcube{
+    width: 95%;
+    margin: auto;
+    text-align: justify;
+    padding: 10px;
+    padding-top: 100px;
+}
+
+#Services_Vcube > h2{
+    text-align:center;
+    text-decoration: underline;
+}
+
+.card{
+    border: 1px solid var(--Text-color);
+    background-color: var(--bg-color);
+}
+
+.card-header{
+    background-color: var(--highlight-color);
+    border-bottom:1px solid var(--highlight-color);
+    text-align: center;
+}
+
+.card-body{
+    max-height: 300px;
+    overflow-y: scroll;
+    
+}
+
+.btn-link{
+    color: var(--Text-color);
+}
+
+.btn-link:hover{
+    text-decoration: none;
+    color: #4FCE5D;
+}
+
+/*What we do*/
+#Whatwedo_Vcube{
+    padding-top: 50px;
+    width: 100vw;
+    text-align: center;
+}
+
+#Whatwedo_Vcube > h2{
+text-decoration: underline;
+}
+
+#Whatwedo_Vcube > div{
+    max-width: 100%;
+}
+
+#Whatwedo_Vcube > div > div{
+    margin: 10px auto;
+}
+
+#Whatwedo_Vcube > div > div > p{
+    text-align: center;
+}
+
+.Whatwedo_Image{
+    max-width: 100%;
+}
+
+/*Example Works*/
+#ExampleWorks_Vcube{
+    text-align: center;
+    padding: 25px;
+    padding-top: 50px;
+}
+
+#ExampleWorks_Vcube > h2 >a{
+    color: var(--Text-color);
+    text-decoration: underline;
+    padding: 10px;
+}
+
+.ExampleWorks_Image{
+    position: relative;
+    min-height: 145px;
+    max-height: 100%;
+    min-width: 161px;
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+/*projects_Vcube*/
+
+#projects_Vcube{
+    text-align: center;
+    padding: 25px;
+    padding-top: 50px;
+}
+
+#projects_Vcube > h2{
+    text-decoration: underline;
+}
+
+/*Footer*/
+footer{
+    margin-top: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--highlight-color);
+}
+
+/*Map*/
+
+.addressalignment > div{
+    padding: 10% 0 10% 0;
+}
+
+.address{
+    margin: auto;
+    width: 100%;
+    height: fit-content;
+    font-size: 20px;
+}
+
+.address > p > a{
+    color: var(--Text-color);
+}
+
+.address > p > a:hover{
+    text-decoration: none;
+    color: var(--Text-color);
+}
+
+.mapouter{
+    position:relative;
+    text-align:right;
+    height:300px;
+    width:500px;
+}
+
+.gmap_canvas{
+    overflow:hidden;
+    background:none!important;
+    height:300px;
+    width:40%;
+    display: inline-block;
+    margin: auto;
+}
+
+.BottomLogo{
+    width: 100%; 
+}
+
+.row > a{
+    text-align: center;
+}
+
+/*Logo*/
+.Logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    background-color: rgba(174, 214, 241,0.0);
+    color: var(--Text-color);
+    text-align: center;
+}
+
+.Facebook{
+    /*Facebook Color - #3578E5*/
+    padding: 3px 0 0 0;
+}
+/*
+.Instagram{
+}
+.LinkedIn{
+}
+.Google{   
+}
+.Pinterest{
+}
+*/
+
+/*Whatsapp Chat*/
+.WhatsappChat{
+    padding: 0px 0px 1px 8px;
+    position: fixed;
+    bottom: 5px;
+    right: 3px;
+    color: var(--Whatsapp-bg-color);
+    z-index: 999;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floating{
+    form { transform: translate(0, 0px);}
+    65% {transform: translate(0, -15px);}
+    to { tranform: translate(0, 0px);}
+}
+
+.WhatsappChat:hover{
+    animation-play-state: paused;
+}
+
+.WhatsappChat > a > .Logo{
+    background-color: #4FCE5D;
+    border: 2px solid var(--Whatsapp-text-color);
+    color: var(--Whatsapp-text-color);
+}
+
+.WhatsappChat > a > span{
+    display: none;
+    text-shadow: -6px 0 8px #fff, 0 6px 8px #fff, 6px 0 8px #fff, 0 -6px 8px #fff;
+    color: var(--Whatsapp-bg-color);
+}
+
+.WhatsappChat > a{
+    text-decoration: none;
+}
+
+.WhatsappChat > a:hover{
+    text-decoration: none;
+    color: var(--Whatsapp-bg-color);
+}
+
+h2{
+    margin-bottom: 1.5rem;
+}
+
+/*Animation*/
+.fadeinAnimation{
+    opacity: 0;
+}
+
+/*Mobile View*/
+
+@media screen and (min-width: 1200px){
+    .container{
+        max-width: 1200px;
+    }
+    
+    #Aboutus_Vcube{
+        margin-top: 100px;
+        padding-top: 100px;
+    }
+}
+
+/*@media screen and (min-width:700px){
+    .carousel-caption{
+        text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    }
+}*/
+
+@media screen and (max-width: 1230px) {
+    
+    .carousel-caption > p{
+        font-size: 30px;
+    }
+
+    .carousel-caption{
+        padding-bottom: 100px;
+    }
+
+    #Aboutus_Vcube > div{
+        margin: 25px 15px; 
+    }
+
+    #Whatwedo_Vcube{
+        height: auto;
+    }
+    
+    #Whatwedo_Vcube > div{
+        margin: auto;
+    }
+
+    .example_box{
+        width: 50%;
+    }
+
+    #ExampleWorks_Vcube{
+        height: auto;
+    }
+
+    #ExampleWorks_Vcube > div{
+        transform: translate(0%, 0%);
+    }
+
+    .gmap_canvas{
+        width: 50%;
+    }
+    .SocialMedia > a > button{
+        margin: auto;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    
+    .blankSpace{
+        height: 150px;
+        display: block;
+    }
+    
+    #Mobile_Vcube > .Vcube_logo{
+        width: 200px;
+    }
+
+    .carousel-caption > p{
+        font-size: 30px;
+    }
+    
+    .carousel-caption{
+        padding-bottom: 50px;
+    }
+
+    .TopLayout{
+        display: none;
+    }
+
+    #Mobile_Vcube{
+        display: block;
+    }
+
+    .container{
+        
+    }
+
+    .SocialMedia > a{
+        width: 16%;
+        padding: 0px;
+    }
+
+    #Aboutus_Vcube > div{
+        margin: 25px 5px; 
+    }
+}
+
+@media screen and (max-width: 635px){
+
+    .carousel-caption > p{
+        font-size: 20px;
+    }
+
+    .example_box{
+        width: 100%;
+    }
+
+    .gmap_canvas{
+        align-items: center;
+        width: 100%;
+        padding: 0px;
+    }
+     
+    .address{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 540px){
+    
+}
+
+@media screen and (max-width: 450px){
+    #Aboutus_Vcube > div {
+        transform: translate(0%, 2%);
+    }
+}
