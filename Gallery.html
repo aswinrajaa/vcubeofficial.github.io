@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<Html>
+<Head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Vcube Interiors</title>
+	<link rel="icon" id="TitleImage" href="VC_logo_2.16_Title.png" type="image/x-icon"/><!--Change Image into Logo-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="vcube.css" >
+	<link rel="stylesheet" href="vcube_Gallery.css" >
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="vcubeScript.js"></script>
+	<script src="vcubeGalleryScript.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</Head>
+<Body>
+	<div class="LoadingAnimation">
+		<div class="centerPlacement">
+			<div class="loader"></div>
+		</div>
+	</div>
+	<header>
+		<div id="navigationbar_Vcube">
+			<div id="Mobile_Vcube">
+				<div id="mobile_TopLayout">
+					<img src="VC_logo_2.16.png" class="Vcube_logo logo_Width" id="Mobile_Logo" alt="Vcube Logo">
+					<button class="button" onclick="MobileMenuOpen()">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>                        
+					</button>
+				</div>
+				<div id="overlayMobile" class="MobileOverlay">
+					<ul>
+						<li>
+							<a href="Index.html" onclick="MobileMenuClose()">Home</a>
+						</li>
+						<li>
+							<a href="#Aboutus_Vcube" onclick="MobileMenuClose()">About Us</a>
+						</li>
+						<li>
+							<a href="Index.html#Services_Vcube" onclick="MobileMenuClose()">Services</a>		
+						</li>
+						<li>
+							<a href="#">Gallery</a>
+						</li>
+						<li>
+							<a href="#">Projects</a>
+						</li>
+						<li>
+							<a href="#footer_Vcube" onclick="MobileMenuClose()">Contact Us</a>
+						</li>
+						<li>
+							<a class="closebutton" onclick="MobileMenuClose()">Close</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="TopLayout" id="Desktop_Navbar_Vcube">
+				<ul class="">
+					<li id="Contact_Us">
+						<a href="#footer_Vcube">Contact Us</a>
+					</li>
+					<li id="Projects">
+						<a href="#">Projects</a>
+					</li>
+					<li id="Gallery">
+						<a href="#">Gallery</a>
+					</li>
+					<li id="services">
+						<a href="Index.html#Services_Vcube">Services</a>
+					</li>
+					<li id="about">
+						<a href="Index.html#Aboutus_Vcube">About Us</a>
+					</li>					
+					<li id="home" class="active">
+						<a href="Index.html">Home</a>
+					</li>
+				</ul>
+				<img src="VC_logo_2.16.png" class="Vcube_logo" id="Desktop_Logo" alt="Vcube Logo">
+			</div>
+		</div>
+	</header>
+	<div>
+		<div>
+			<div class="gallery_Heading">
+				<h1>Gallery</h1>
+			</div>
+			<div class="ImageArrangingButtons container">
+				<div class="row">
+					<div class="btn-group col" role="group">
+						<button type="button" id="AllPics" class="btn btn-secondary btn-group-xs" onclick="displayAllPics()">All</button>
+						<button type="button" id="ConstructionPics" class="btn btn-secondary btn-group-xs" onclick="ConstructionPics()">Construction</button>
+						<button type="button" id="InteriorPics" class="btn btn-secondary btn-group-xs" onclick="InteriorPics()">Interiors</button>
+					</div>
+				</div>
+				<div class="row forinterior">
+					<div class="btn-group col" role="group">
+						<button type="button" class="btn btn-secondary btn-group-xs" onclick="commercialPics()">Commercial</button>
+						<button type="button" class="btn btn-secondary btn-group-sm" onclick="residentialPics()">Residential</button>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="gallery_Box row p-0 row-cols-1 row-cols-sm-2 row-cols-md-3">
+					<img src="Gallery/Image_1.jpg" id="1" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Kids Bedroom" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_2.jpg" id="2" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Kids Bedroom" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_3.jpg" id="3" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Kitchen" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_4.jpg" id="4" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Kitchen" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_5.jpg" id="5" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Kitchen" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_6.jpg" id="6" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Kitchen" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_7.jpg" id="7" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Kitchen" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_8.jpg" id="8" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Kitchen" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_9.jpg" id="9" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Kitchen" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_10.jpg" id="10" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Bedroom" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_11.jpg" id="11" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="Bedroom" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_12.jpg" id="12" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="TV Unit" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_13.jpg" id="13" class="Gallery_Img col p-0 Residential Interior" alt="Vcube Works" title="TV Unit" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_14.jpg" id="14" class="Gallery_Img col p-0 Commercial Interior" alt="Vcube Works" title="Office" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_15.jpg" id="15" class="Gallery_Img col p-0 Commercial Interior" alt="Vcube Works" title="Office" onclick="OpenImage(this.id)" />
+					<img src="Gallery/Image_16.jpg" id="16" class="Gallery_Img col p-0 Commercial Interior" alt="Vcube Works" title="Office" onclick="OpenImage(this.id)" />
+				</div>
+			</div>
+			<div id="openFullscreen">
+				<span class="close_Button" onclick="closeFullscreen()">&times;</span>
+				<div class="Overlay row">
+					<img id="DisplayImage" class="col">
+					<p class="OverlayNavigation navigationleft" onclick="LoadPreviousImage(this.imageid)">&#8249;</p>
+					<p class="OverlayNavigation navigationright" onclick="LoadNextImage(this.id)">&#8250;</p>
+				</div>
+				<div class="row">
+					<p id="Image_Caption"></p>
+				</div>
+			</div>
+			<div class="WhatsappChat">
+				<a href="https://wa.me/919443052328"><!--Whatsapp Number-->
+					<span class="WhatsappName">WhatsApp</span>
+					<button class="Logo" title=""><i class="fa fa-whatsapp"></i></button>
+				</a>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div id="footer_Vcube" class="container">
+			<div class="row row-cols-1 row-cols-md-3">
+				<div class="col addressalignment">
+					<div class="address">
+						<h2>Address:</h2>
+						<p>
+							5/1840 Sourashtrapuram 12th street,<br />Kurinji Nagar 9, <br />Vandiyur, Madurai – 625 020.<br />
+							<a href="tel: +91 - 8248231181"><i class="fa fa-phone"></i> +91 - 8248231181</a><br />
+							<a href="tel: +91 - 80980 26847"><i class="fa fa-phone"></i> +91 - 80980 26847</a>
+						</p>
+					</div>
+				</div>
+				<div class="col">
+					<img src="VC_logo_2.16.png" class="BottomLogo" alt="VCube logo">
+				</div>
+				<div class="gmap_canvas col">
+					<iframe width="500" height="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.221722107465!2d78.15426431428152!3d9.915483277205569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5c2c346fb23%3A0x9b91ac5c2ddfa393!2sV%20Cube%20Construction%20and%20Interiors!5e0!3m2!1sen!2sin!4v1588734371862!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row row-cols-6 row-cols-md-6">
+				<a href="https://www.facebook.com/V-Cube-Construction-and-Interiors-110391543943570/" class="col">
+					<button class="Facebook Logo" title="facebook/Vcube"><i class="fa fa-facebook"></i></button>
+				</a>
+				<a href="mailto:vcubeci@gmail.com" class="col"><!--Email-->
+					<button class="Google Logo" title="vcubeci@gmail.com">
+						<i class="fa fa-google"></i>
+					</button>
+				</a>
+				<a href="https://www.instagram.com/vcubeci/" class="col">
+					<button class="Instagram Logo"><i class="fa fa-instagram"></i></button>
+				</a>
+				<a class="col">
+					<button class="LinkedIn Logo"><i class="fa fa-linkedin"></i></button>
+				</a>
+				<a class="col">
+					<button class="Pinterest Logo"><i class="fa fa-pinterest"></i></button>
+				</a>
+				<a href="https://wa.me/919443052328" class="col"><!--Whatsapp Number-->
+					<button class="Logo" title=""><i class="fa fa-whatsapp"></i></button>
+				</a>
+			</div>
+		</div>
+	</footer>
+</Body>
+</Html>
