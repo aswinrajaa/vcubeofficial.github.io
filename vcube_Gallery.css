@@ -1,5 +1,11 @@
 /*Gallery - Stylesheet*/
 
+.GalleryInfo{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
 .gallery_Heading{
     width: 100%;
     height: 50%;
@@ -8,11 +14,20 @@
     padding: 150px;
     --Text-color: #154360;
     --highlight-color: rgba(174, 214, 241,0.3);
+    --bg-color:#fff;
+    background-color: var(--Text-color);
+    color: var(--bg-color);
+    margin-bottom: 30px;
+    position: relative;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
 }
 
 .gallery_Heading > h1{
     text-align: center;
     font-weight: bold;
+    color: var(--Text-color);
+    text-shadow: -3px 0 10px #fff, 0 3px 10px #fff, 3px 0 10px #fff, 0 -3px 10px #fff;
 }
 
 /*Images List*/
