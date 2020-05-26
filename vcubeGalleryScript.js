@@ -36,7 +36,7 @@
 
     function LoadPreviousImage(){
         if(openedImageid <= 1){
-            openedImageid=16;
+            openedImageid = 33;
         }else{
             openedImageid--;
         }
@@ -48,7 +48,7 @@
     }
 
     function  LoadNextImage(){
-        if(openedImageid<16){
+        if(openedImageid < 33){
             openedImageid++;
         }else{
             openedImageid=1;

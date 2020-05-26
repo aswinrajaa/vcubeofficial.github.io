@@ -32,10 +32,12 @@
 
 /*Images List*/
 .Gallery_Img{
-    width: 100%;
+    max-width: 100%;
     transition-duration: 0.1s;
     margin-top: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-height: 170px;
+    object-fit: cover;
 }
 
 .Gallery_Img:hover{
@@ -68,11 +70,13 @@
 .navigationleft{
     top: 50%;
     left: 16px;
+    position: fixed;
 }
 
 .navigationright{
     top: 50%;
     right: 16px;
+    position: fixed;
 }
 
 .OverlayNavigation:hover{
@@ -97,6 +101,7 @@
     left: 0;
     background-color: rgba(0,0,0, 0.9);
     transition-duration: 1s;
+    overflow-y: scroll;
 }
 
 .Residential{
@@ -135,7 +140,8 @@
   }
 
 #DisplayImage{
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .forinterior{
@@ -181,6 +187,7 @@
         margin-left: auto;
         margin-right: auto;
         border-radius: 10px 50px 10px 50px;
+        max-height: 127px;
     }
     .row-cols-sm-2 > *{
         -ms-flex: 0 0 48%;
@@ -190,10 +197,19 @@
 }
 
 @media (min-width: 768px){
+    .Gallery_Img{
+        max-height: 140px;  
+    }
     .row-cols-md-3 > * {
-        -ms-flex: 0 0 31.5%;
-        flex: 0 0 31.5%;
-        max-width: 31.5%;
+        -ms-flex: 0 0 29%;
+        flex: 0 0 29%;
+        max-width: 29%;
+    }
+}
+
+@media (min-width: 1000px){
+    .Gallery_Img{
+        max-height: 170px;
     }
 }
 
