@@ -166,13 +166,15 @@
 			</div>
 			<div id="openFullscreen">
 				<span class="close_Button" onclick="closeFullscreen()">&times;</span>
-				<div class="Overlay row">
-					<img id="DisplayImage" class="col">
-					<p class="OverlayNavigation navigationleft" onclick="LoadPreviousImage(this.imageid)">&#8249;</p>
-					<p class="OverlayNavigation navigationright" onclick="LoadNextImage(this.id)">&#8250;</p>
-				</div>
-				<div class="row">
-					<p id="Image_Caption"></p>
+				<p class="OverlayNavigation navigationleft" onclick="LoadPreviousImage()">&#8249;</p>
+				<p class="OverlayNavigation navigationright" onclick="LoadNextImage()">&#8250;</p>
+				<div>
+					<div class="Overlay row">
+						<img id="DisplayImage">	
+					</div>
+					<div class="row">
+						<p id="Image_Caption"></p>
+					</div>
 				</div>
 			</div>
 			<div class="WhatsappChat">

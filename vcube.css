@@ -192,14 +192,15 @@ body{
     background: none;
     border: none;
     float: right;
+    background-color: var(--Text-color);
 }
 
 .button:hover{
     background-color: var(--Text-color);
-    color: #fff;
 }
 
 #overlayMobile{
+    transition-duration: 1s;
     height: 100vh;
     width: 100vw;
     display: none;
@@ -228,9 +229,8 @@ body{
 
 
 .line{
-    border-top: 2px solid var(--Text-color);
+    border-top: 2.5px solid var(--bg-color);
     margin: 4px;
-    box-shadow: -3px 0 6px #fff, 0 3px 6px #fff, 3px 0 6px #fff, 0 -3px 6px #fff;
 }
 
     /*Computer*/
@@ -398,6 +398,8 @@ body{
 .card-body{
     max-height: 300px;
     overflow-y: scroll;
+    font-family: Helvetica;
+    font-size: 17px;
 }
 
 .card-body > a{
@@ -424,7 +426,14 @@ body{
 
 .btn-link:hover{
     text-decoration: none;
-    color: #4FCE5D;
+    color: white;
+    text-shadow: -6px 0 8px var(--Text-color), 0 6px 8px var(--Text-color), 6px 0 8px var(--Text-color), 0 -6px 8px var(--Text-color);
+}
+
+.btn-link:focus{
+    color: white;
+    text-shadow: -6px 0 8px var(--Text-color), 0 6px 8px var(--Text-color), 6px 0 8px var(--Text-color), 0 -6px 8px var(--Text-color);
+    text-decoration: none;
 }
 
 /*What we do*/

@@ -7,14 +7,30 @@
     document.onkeydown = function(evt) {
         evt = evt || window.event;
         var isEscape = false;
+        var isRightArrow = false;
+        var isLeftArrow = false;
         if ("key" in evt) {
             isEscape = (evt.key === "Escape" || evt.key === "Esc");
+            isRightArrow = (evt.key === "ArrowRight");
+            isLeftArrow = (evt.key === "ArrowLeft");
         } else {
             isEscape = (evt.keyCode === 27);
+            isRightArrow = (evt.keyCode === 39);
+            isLeftArrow = (evt.keyCode === 37);
         }
         if (isEscape) {
             if(openedImageid != null){
                 closeFullscreen();
+            }
+        }
+        if (isRightArrow) {
+            if(openedImageid != null){
+                LoadNextImage();
+            }
+        }
+        if (isLeftArrow) {
+            if(openedImageid != null){
+                LoadPreviousImage();
             }
         }
     };
