@@ -52,7 +52,7 @@
 
     function LoadPreviousImage(){
         if(openedImageid <= 1){
-            openedImageid = 33;
+            openedImageid = 37;
         }else{
             openedImageid--;
         }
@@ -64,7 +64,7 @@
     }
 
     function  LoadNextImage(){
-        if(openedImageid < 33){
+        if(openedImageid < 37){
             openedImageid++;
         }else{
             openedImageid=1;
